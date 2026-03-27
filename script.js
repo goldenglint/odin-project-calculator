@@ -1,3 +1,9 @@
+//variables
+let numOne=null;
+let numTwo=null;
+let operator=null;
+let display=document.querySelector(".display");
+
 // math functions for two numbers
 function add(a ,b){
     return a+b;
@@ -36,39 +42,67 @@ function operate(op, a, b){
 
 //find the numbers clicked
 
-let numbers=document.querySelector(".container");
-numbers.addEventListener("click", (num) => {
-    const digit=num.target;
-    if(digit.classList.contains("zero")){
-        console.log("zero");
+let buttons=document.querySelector(".container");
+buttons.addEventListener("click", (b) => {
+    const button=b.target;
+    if(button.classList.contains("zero")){
+        display.textContent="0";
     }
-    else if(digit.classList.contains("one")){
-        console.log("one");
+    else if(button.classList.contains("one")){
+        display.textContent="1";
     }
-    else if(digit.classList.contains("two")){
-        console.log("two");
+    else if(button.classList.contains("two")){
+        display.textContent="2";
     }
-    else if(digit.classList.contains("three")){
-        console.log("three");
+    else if(button.classList.contains("three")){
+        display.textContent="3";
     }
-    else if(digit.classList.contains("four")){
-        console.log("four");
+    else if(button.classList.contains("four")){
+        display.textContent="4";
     }
-    else if(digit.classList.contains("five")){
-        console.log("five");
+    else if(button.classList.contains("five")){
+        display.textContent="5";
     }
-    else if(digit.classList.contains("six")){
-        console.log("six");
+    else if(button.classList.contains("six")){
+        display.textContent="6";
     }
-    else if(digit.classList.contains("seven")){
-        console.log("seven");
+    else if(button.classList.contains("seven")){
+        display.textContent="7";
     }
-    else if(digit.classList.contains("eight")){
-        console.log("eight");
+    else if(button.classList.contains("eight")){
+        display.textContent="8";
     }
-    else if(digit.classList.contains("nine")){
-        console.log("nine");
+    else if(button.classList.contains("nine")){
+        display.textContent="9";
     }
+    else if(button.classList.contains("plus")){
+        display.textContent="+";
+    }
+    else if(button.classList.contains("minus")){
+        display.textContent="-";
+    }
+    else if(button.classList.contains("multiply")){
+        display.textContent="X";
+    }
+    else if(button.classList.contains("divide")){
+        display.textContent="/";
+    }
+    else if(button.classList.contains("power")){
+        display.textContent="^";
+    }
+    else if(button.classList.contains("equal")){
+        display.textContent="=";
+    }
+    else if(button.classList.contains("clear")){
+        display.textContent="C";
+    }
+    else if(button.classList.contains("dot")){
+        display.textContent=".";
+    }
+    else if(button.classList.contains("del")){
+        display.textContent="del";
+    }
+    
     
 });
 

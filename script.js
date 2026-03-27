@@ -2,6 +2,7 @@
 let numOne=null;
 let numTwo=null;
 let operator=null;
+let lastType=null;
 let display=document.querySelector(".display");
 
 // math functions for two numbers
@@ -24,6 +25,10 @@ function divide(a,b){
     return Math.round(a/b);
 }
 
+function power(a,b){
+    return Math.pow(a, b);
+}
+
 //operate function with the operators
 function operate(op, a, b){
     if(op=="add"){
@@ -38,6 +43,9 @@ function operate(op, a, b){
     else if(op=="divide"){
         return divide(a,b);
     }
+    else if(op=="power"){
+        return power(a,b);
+    }
 };
 
 //find the numbers clicked
@@ -46,34 +54,245 @@ let buttons=document.querySelector(".container");
 buttons.addEventListener("click", (b) => {
     const button=b.target;
     if(button.classList.contains("zero")){
-        display.textContent="0";
+        if(lastType==null){
+            numOne=0;
+            display.textContent="0";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="0";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="0";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="0";
+            display.textContent="0";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);        
+        
     }
     else if(button.classList.contains("one")){
-        display.textContent="1";
+        if(lastType==null){
+            numOne=1;
+            display.textContent="1";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="1";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="1";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="1";
+            display.textContent="1";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);       
     }
     else if(button.classList.contains("two")){
-        display.textContent="2";
+        if(lastType==null){
+            numOne=2;
+            display.textContent="2";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="2";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="2";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="2";
+            display.textContent="2";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);       
     }
     else if(button.classList.contains("three")){
-        display.textContent="3";
+        if(lastType==null){
+            numOne=3;
+            display.textContent="3";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="3";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="3";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="3";
+            display.textContent="3";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);       
     }
     else if(button.classList.contains("four")){
-        display.textContent="4";
+        if(lastType==null){
+            numOne=4;
+            display.textContent="4";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="4";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="4";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="4";
+            display.textContent="4";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);      
     }
     else if(button.classList.contains("five")){
-        display.textContent="5";
+        if(lastType==null){
+            numOne=5;
+            display.textContent="5";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="5";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="5";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="5";
+            display.textContent="5";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);      
     }
     else if(button.classList.contains("six")){
-        display.textContent="6";
+        if(lastType==null){
+            numOne=6;
+            display.textContent="6";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="6";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="6";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="6";
+            display.textContent="6";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);      
     }
     else if(button.classList.contains("seven")){
-        display.textContent="7";
+        if(lastType==null){
+            numOne=7;
+            display.textContent="7";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="7";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="7";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="7";
+            display.textContent="7";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);     
     }
     else if(button.classList.contains("eight")){
-        display.textContent="8";
+        if(lastType==null){
+            numOne=8;
+            display.textContent="8";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="8";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="8";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="8";
+            display.textContent="8";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);      
     }
     else if(button.classList.contains("nine")){
-        display.textContent="9";
+        if(lastType==null){
+            numOne=9;
+            display.textContent="9";
+            lastType="numOne";
+        }
+        else if(lastType=="numOne"){
+            display.textContent+="9";
+            numOne=Number(display.textContent);
+    
+        }
+        else if(lastType=="numTwo"){
+            display.textContent+="9";
+            numTwo=Number(display.textContent);
+            
+        }
+        else{
+            numTwo="9";
+            display.textContent="9";
+            lastType="numTwo";
+        }
+        console.log(numOne);
+        console.log(numTwo);
     }
     else if(button.classList.contains("plus")){
         display.textContent="+";

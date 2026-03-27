@@ -70,7 +70,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="0";
+            numTwo=0;
             display.textContent="0";
             lastType="numTwo";
         }
@@ -95,7 +95,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="1";
+            numTwo=1;
             display.textContent="1";
             lastType="numTwo";
         }
@@ -119,7 +119,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="2";
+            numTwo=2;
             display.textContent="2";
             lastType="numTwo";
         }
@@ -143,7 +143,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="3";
+            numTwo=3;
             display.textContent="3";
             lastType="numTwo";
         }
@@ -167,7 +167,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="4";
+            numTwo=4;
             display.textContent="4";
             lastType="numTwo";
         }
@@ -191,7 +191,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="5";
+            numTwo=5;
             display.textContent="5";
             lastType="numTwo";
         }
@@ -215,7 +215,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="6";
+            numTwo=6;
             display.textContent="6";
             lastType="numTwo";
         }
@@ -239,7 +239,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="7";
+            numTwo=7;
             display.textContent="7";
             lastType="numTwo";
         }
@@ -263,7 +263,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="8";
+            numTwo=8;
             display.textContent="8";
             lastType="numTwo";
         }
@@ -287,7 +287,7 @@ buttons.addEventListener("click", (b) => {
             
         }
         else{
-            numTwo="9";
+            numTwo=9;
             display.textContent="9";
             lastType="numTwo";
         }
@@ -295,7 +295,26 @@ buttons.addEventListener("click", (b) => {
         console.log(numTwo);
     }
     else if(button.classList.contains("plus")){
-        display.textContent="+";
+        if(lastType=="numOne"){
+            display.textContent="+";
+            operator="add";
+            lastType="operator";
+        }
+        else if(lastType=="numTwo"){
+            numOne=operate(operator, numOne, numTwo);
+            operator="add";
+            numTwo=null;
+            display.textContent=numOne;
+            lastType="operator";
+        }
+        else if(lastType==null){
+            display.textContent="ERROR (no numbers)";
+        }
+        else{
+            display.textContent="ERROR (cannot apply function)";
+        }
+        console.log(numOne);
+        console.log(numTwo);
     }
     else if(button.classList.contains("minus")){
         display.textContent="-";

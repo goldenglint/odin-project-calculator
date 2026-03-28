@@ -405,16 +405,67 @@ buttons.addEventListener("click", (b) => {
         console.log(numTwo);
     }
     else if(button.classList.contains("equal")){
-        
+        if(lastType=="numOne"){
+            display.textContent=numOne;
+            
+        }
+        else if(lastType=="numTwo"){
+            numOne=operate(operator, numOne, numTwo);
+            operator=null;
+            numTwo=null;
+            display.textContent=numOne;
+            lastType="numOne";
+        }
+        else if(lastType==null){
+            display.textContent="ERROR (no numbers)";
+        }
+        else{
+            display.textContent="ERROR (cannot apply function)";
+        }
+        console.log(numOne);
+        console.log(numTwo);
     }
     else if(button.classList.contains("clear")){
-        display.textContent="C";
+        display.textContent="Enter Number";
+        numOne=null;
+        numTwo=null;
+        operator=null;
+        lastType=null;
     }
-    else if(button.classList.contains("dot")){
-        display.textContent=".";
+    else if(button.classList.contains("negative")){
+        if(lastType=="numOne"){
+            numOne = Number(display.textContent)*-1;
+            display.textContent = numOne;
+            
+        }
+        else if(lastType=="numTwo"){
+            numTwo = Number(display.textContent)*-1;
+            display.textContent = numTwo;
+        }
+        else if(lastType==null){
+            display.textContent="ERROR (no numbers)";
+        }
+        else{
+            display.textContet="ERROR (can't negate)";
+        }
     }
     else if(button.classList.contains("del")){
-        display.textContent="del";
+        if(lastType=="numOne"){
+            display.textContent = display.textContent.slice(0, -1);
+            numOne = Number(display.textContent);
+        }
+        else if(lastType=="numTwo"){
+            display.textContent = display.textContent.slice(0, -1);
+            numTwo = Number(display.textContent);
+        }
+        else if(lastType==null){
+            display.textContent="ERROR (no numbers)";
+        }
+        else{
+            operator = null;
+            lastType = "numOne";
+            display.textContent = numOne; 
+        }
     }
     
     

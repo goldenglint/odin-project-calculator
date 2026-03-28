@@ -317,19 +317,95 @@ buttons.addEventListener("click", (b) => {
         console.log(numTwo);
     }
     else if(button.classList.contains("minus")){
-        display.textContent="-";
+        if(lastType=="numOne"){
+            display.textContent="-";
+            operator="subtract";
+            lastType="operator";
+        }
+        else if(lastType=="numTwo"){
+            numOne=operate(operator, numOne, numTwo);
+            operator="subtract";
+            numTwo=null;
+            display.textContent=numOne;
+            lastType="operator";
+        }
+        else if(lastType==null){
+            display.textContent="ERROR (no numbers)";
+        }
+        else{
+            display.textContent="ERROR (cannot apply function)";
+        }
+        console.log(numOne);
+        console.log(numTwo);
     }
     else if(button.classList.contains("multiply")){
-        display.textContent="X";
+        if(lastType=="numOne"){
+            display.textContent="X";
+            operator="multiply";
+            lastType="operator";
+        }
+        else if(lastType=="numTwo"){
+            numOne=operate(operator, numOne, numTwo);
+            operator="multiply";
+            numTwo=null;
+            display.textContent=numOne;
+            lastType="operator";
+        }
+        else if(lastType==null){
+            display.textContent="ERROR (no numbers)";
+        }
+        else{
+            display.textContent="ERROR (cannot apply function)";
+        }
+        console.log(numOne);
+        console.log(numTwo);
     }
     else if(button.classList.contains("divide")){
-        display.textContent="/";
+        if(lastType=="numOne"){
+            display.textContent="/";
+            operator="divide";
+            lastType="operator";
+        }
+        else if(lastType=="numTwo"){
+            numOne=operate(operator, numOne, numTwo);
+            operator="divide";
+            numTwo=null;
+            display.textContent=numOne;
+            lastType="operator";
+        }
+        else if(lastType==null){
+            display.textContent="ERROR (no numbers)";
+        }
+        else{
+            display.textContent="ERROR (cannot apply function)";
+        }
+        console.log(numOne);
+        console.log(numTwo);
     }
     else if(button.classList.contains("power")){
-        display.textContent="^";
+        if(lastType=="numOne"){
+            display.textContent="^";
+            operator="power";
+            lastType="operator";
+        }
+        else if(lastType=="numTwo"){
+            numOne=operate(operator, numOne, numTwo);
+            operator="power";
+            numTwo=null;
+            display.textContent=numOne;
+            lastType="operator";
+        }
+        else if(lastType==null){
+            display.textContent="ERROR (no numbers)";
+        }
+        else{
+            display.textContent="ERROR (cannot apply function)";
+        }
+        console.log(numOne);
+        console.log(numTwo);
     }
     else if(button.classList.contains("equal")){
-        display.textContent="=";
+        
     }
     else if(button.classList.contains("clear")){
         display.textContent="C";
